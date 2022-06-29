@@ -59,7 +59,7 @@ app.put("/put/:id", (req, res) => {
     description: req.body.description,
   };
   Item.findByIdAndUpdate({ _id: id }, { $set: updatedItem }, (req, res, err) => {
-    if (!err) console.log("item updated");
+    if (!err) res.json("book added to liked section");
     else console.log(err);
   });
 });
